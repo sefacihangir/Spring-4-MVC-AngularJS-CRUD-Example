@@ -19,4 +19,6 @@ public interface ProductService {
 	
 	void deleteAllPRoducts();
 
+	public boolean isProductExist(Product product);
+
 }

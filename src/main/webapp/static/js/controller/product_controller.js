@@ -4,10 +4,8 @@ App.controller('ProductController', ['$scope', 'ProductService', function($scope
 	var self = this;	
 	self.product={id:null,description:'',category:null};
 	self.products=[];
-	self.helloMsgs = "Hello ll";	
 	
 	self.fetchAllProducts = function(){
-		alert(self.products);
 		ProductService.fecthAllProducts()
 			.then(
 					function(d) {
@@ -17,9 +15,24 @@ App.controller('ProductController', ['$scope', 'ProductService', function($scope
 						console.error('Error while fetching Products');
 					}
 			);
-		alert(self.products);
 	};
 	
 	self.fetchAllProducts();
+	
+	self.reset = function(){
+		self.product = {id:null,description:'',category:null};
+		$scope.myForm.$setPristine();
+	};
+	
+	self.submit = function(){
+		if(self.product.id==null){
+			console.log('Saving New Product', self.product);
+			self.createProduct(self.product);
+		}else{
+			self.updateUser(self.product, self.product.id);
+			console.log('Product update with id ', self.product.id);
+		}
+		self.reset();
+	};
 	
 }]);
