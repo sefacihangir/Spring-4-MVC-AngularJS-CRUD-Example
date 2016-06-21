@@ -27,7 +27,13 @@
 					<input type="hidden" ng-model="ctrl.product.id" />
 					<div class="row">
 						<div class="form-group col-md-12">
-							<label class="cold-md-2 control-label" for="udescription">Product</label>
+							<label class="col-md-2 control-label">Id</label>
+							<label class="col-md-1 control-label" style="text-align: left" ng-bind="ctrl.product.id"></label>							
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group col-md-12">
+							<label class="col-md-2 control-label" for="udescription">Product</label>
 							<div class="col-md-7">
 								<input type="text" ng-model="ctrl.product.description" id="udescription" class="description form-control input-sm" placeholder="Enter Product's Name" required/>
 								<div class="has-error" ng-show="myForm.$dirty">
@@ -63,7 +69,7 @@
 							<td><span ng-bind="u.description"></span></td>
 							<td><span ng-bind="u.category"></span></td>
 							<td>
-								<button type="button" class="btn btn-success custom-width">Edit</button> <button type="button" class="btn btn-danger custom-width">Remove</button>
+								<button type="button" ng-click="ctrl.edit(u.id)" class="btn btn-success custom-width">Edit</button> <button type="button" ng-click="ctrl.remove(u.id)" class="btn btn-danger custom-width">Remove</button>
 							</td>
 						</tr>
 					</tbody>
