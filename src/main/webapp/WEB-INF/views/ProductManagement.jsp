@@ -43,6 +43,16 @@
 							</div>
 						</div>
 					</div> 
+					<div class="row">
+						<div class="form-group col-md-12">
+							<label class="col-md-2 control-label" for="ucategory">Category</label>
+							<div class="col-md-7">								
+								<select id="ucategory" class="category  form-control selectpicker">
+									<option value="teste" >Teste</option>
+								</select>
+							</div>
+						</div>						
+					</div>
 					
 					<div class="row">
 						<div class="form-actions floatRight">
