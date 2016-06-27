@@ -1,21 +1,31 @@
 package com.springmvc.model;
 
+import java.util.ArrayList;
+import java.util.EnumSet;
+import java.util.List;
+
 public class Product {
-	
+
 	public enum ProductCategory {
-		Hygiene, Grocery, Cleaning, Electronic
+		Hygiene, Grocery, Cleaning, Electronic;
+
+		public static List<ProductCategory> listAll() {
+			List<ProductCategory> list = new ArrayList<ProductCategory>(EnumSet.allOf(ProductCategory.class));
+			return list;
+
+		}
 	}
 
 	private long id;
-	
+
 	private String description;
-	
+
 	private ProductCategory category;
-	
+
 	public Product() {
 		id = 0;
 	}
-	
+
 	public Product(long id, String description, ProductCategory category) {
 		this.id = id;
 		this.description = description;

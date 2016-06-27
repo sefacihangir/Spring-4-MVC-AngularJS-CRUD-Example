@@ -47,8 +47,9 @@
 						<div class="form-group col-md-12">
 							<label class="col-md-2 control-label" for="ucategory">Category</label>
 							<div class="col-md-7">								
-								<select id="ucategory" class="category  form-control selectpicker">
-									<option value="teste" >Teste</option>
+								<select id="ucategory" class="category form-control selectpicker" ng-model="ctrl.product.category"
+									ng-options="u for u in ctrl.categories track by u">
+<!-- 									<option ng-repeat="u in ctrl.categories" ng-bind="u" value="{{u}}"></option> -->
 								</select>
 							</div>
 						</div>						

@@ -5,6 +5,8 @@ App.controller('ProductController', ['$scope', 'ProductService', function($scope
 	self.product={id:null,description:'',category:null};
 	self.products=[];
 	
+	self.categories=[];
+	
 	self.fetchAllProducts = function(){
 		ProductService.fecthAllProducts()
 			.then(
@@ -18,6 +20,20 @@ App.controller('ProductController', ['$scope', 'ProductService', function($scope
 	};
 	
 	self.fetchAllProducts();
+		
+	self.fetchAllCategories = function(){
+		ProductService.fetchAllCategories()
+			.then(
+					function(d){
+						self.categories = d;
+					},
+					function(errResponse){
+						console.error('Error while fetching Categories');
+					}
+			);
+	};
+	
+	self.fetchAllCategories();
 	
 	self.reset = function(){
 		self.product = {id:null,description:'',category:null};
@@ -56,6 +72,7 @@ App.controller('ProductController', ['$scope', 'ProductService', function($scope
 	};
 	
 	self.updateProduct = function(product, id){
+		console.log('product to be edited', product);
 		ProductService.updateProduct(product, id)
 			.then(
 					self.fetchAllProducts,

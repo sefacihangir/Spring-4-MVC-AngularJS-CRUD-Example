@@ -17,6 +17,19 @@ App.factory('ProductService', ['$http', '$q', function($http, $q){
 					);
 		},
 		
+		fetchAllCategories: function(){
+			return $http.get('http://localhost:8080/Spring-MVC-Angular-JS/product/category/')
+					.then(
+							function(response){
+								return response.data;
+							},
+							function(errResponse){
+								console.error('Error while fetching categories');
+								return $q.reject(errResponse);
+							}
+					);
+		},
+		
 		createProduct: function(product){
 			return $http.post('http://localhost:8080/Spring-MVC-Angular-JS/product/', product)
 					.then(
