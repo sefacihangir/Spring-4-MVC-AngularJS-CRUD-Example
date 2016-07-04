@@ -2,7 +2,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.springmvc</groupId>
-	<artifactId>Spring-MVC-Angular-JS</artifactId>
+	<artifactId>Spring-MVC-Angular-JS-ngResource</artifactId>
 	<packaging>war</packaging>
 	<version>1.0.0</version>
 	<name>SpringMVCAngularJS Maven Webapp</name>
@@ -58,6 +58,6 @@
 			</plugins>
 		</pluginManagement>
 
-		<finalName>Spring-MVC-Angular-JS</finalName>
+		<finalName>Spring-MVC-Angular-JS-ngResource</finalName>
 	</build>
 </project>
